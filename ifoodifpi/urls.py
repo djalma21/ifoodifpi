@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
 from api.viewsets import ListaProdutosViewSet, CategoriaViewSet
+from core.views import CustomAuthToken
 
 router = routers.DefaultRouter()
 router.register(r'produtos', ListaProdutosViewSet, base_name='api_produtos')
@@ -27,5 +28,7 @@ router.register(r'categoria', CategoriaViewSet, base_name='api_categoria')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('token/', CustomAuthToken.as_view())
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

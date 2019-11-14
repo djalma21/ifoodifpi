@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['ifood-my-app.herokuapp.com']
+ALLOWED_HOSTS = ['ifood-my-app.herokuapp.com/']
 
 
 # Application definition

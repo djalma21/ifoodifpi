@@ -26,7 +26,7 @@ router.register(r'produtos', ListaProdutosViewSet, base_name='api_produtos')
 router.register(r'categoria', CategoriaViewSet, base_name='api_categoria')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
     path('api/', include(router.urls)),
     path('token/', CustomAuthToken.as_view())
 

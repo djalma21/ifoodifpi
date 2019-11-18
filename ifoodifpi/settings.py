@@ -142,7 +142,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Habilita o Cors
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = ['*']
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

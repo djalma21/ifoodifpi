@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.template.context_processors import request
 from rest_framework.viewsets import ModelViewSet
 from .serializer import ProdutoSerializer, CategoriaSerializer, EstabelecimentoSerializer, UserSerializer
 from core.models import Produto, Categoria, Estabelecimento
@@ -9,6 +10,8 @@ from django.shortcuts import  get_object_or_404
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
+from rest_framework import generics
+from django_filters import rest_framework as filters
 
 
 class ListaProdutosViewSet(ModelViewSet):
@@ -30,3 +33,7 @@ class ListaEstabelecimentoViewSet(ModelViewSet):
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class ListPordutoEstabelecimento(ModelViewSet):
+     queryset = Produto.objects.filter(estabelecimento=1)
+     serializer_class = ProdutoSerializer

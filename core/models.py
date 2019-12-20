@@ -75,3 +75,9 @@ class Produto(models.Model):
 
     def __str__(self):
         return f' {self.descricao} - {self.preco}'
+
+
+# class Compra(models.Models):
+#     produto = models.ForeignKey(Produto, verbose_name='Produto', max_length=40, )
+#     preco = models.decimalField(Produto, max_length=40, verbose_name = 'Preco')
+
